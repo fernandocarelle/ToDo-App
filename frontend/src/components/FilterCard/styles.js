@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div `
 
-    width: 260px;
-    height: 60px;
+    width: 240px;
+    height: 50px;
     background: ${props => props.actived ?  '#F4A261' : '#2A9D8F' };
     padding: 10px;
     
@@ -12,6 +12,7 @@ export const Container = styled.div `
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    
 
     cursor: pointer;
 

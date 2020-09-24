@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as S from './styles';
+
+import api from '../../services/api';
+
 import Header from '../../components/Header/index';
 import Footer from '../../components/Footer/index';
 import FilterCard from '../../components/FilterCard/index';
@@ -8,10 +11,35 @@ import TaskCard from '../../components/TaskCard/index';
 function Home() {
 
   const [filterActived, setFilterActived] = useState('all');
+  const [tasks, setTasks] = useState([]);
+  const [lateCount, setLateCount] = useState();
+
+  async function loadTasks(){
+    await api.get(`/task/filter/${filterActived}/11:11:11:11:11:11`)
+    .then(response => {
+      setTasks(response.data)
+    })
+  }
+
+  async function lateVerify(){
+    await api.get(`/task/filter/late/11:11:11:11:11:11`)
+    .then(response => {
+      setLateCount(response.data.length)
+    })
+  }
+
+  function Notification(){
+    setFilterActived('late');
+  }  
+
+  useEffect(() => {
+    loadTasks();
+    lateVerify();
+  }, [filterActived])
 
   return (
     <S.Container>
-        <Header />
+        <Header lateCount={lateCount} clickNotification={Notification}/>
         <S.FilterArea>
           <button type="button"        onClick={() => setFilterActived("all")}>
             <FilterCard title="Todos"  actived={filterActived === 'all'} />
@@ -31,18 +59,13 @@ function Home() {
         </S.FilterArea>
 
         <S.Title>
-          <h3>TAREFAS</h3>
+          <h3>{filterActived === 'late' ? 'TAREFAS ATRASADAS' : 'TAREFAS'}</h3>
         </S.Title>
 
         <S.Content>
-          <TaskCard />
-          <TaskCard />
-          <TaskCard />
-          <TaskCard />
-          <TaskCard />
-          <TaskCard />
-          <TaskCard />
-          <TaskCard />
+          {tasks.map(task => (
+            <TaskCard type={task.type} title={task.title} when={task.when} />
+          ))}
         </S.Content>
         
         <Footer />

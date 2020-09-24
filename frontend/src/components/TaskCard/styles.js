@@ -6,13 +6,14 @@ export const Container = styled.div `
     height: 200px;
     box-shadow: -3px 1px 13px -2px rgba(0, 0, 0, 0.73);
     border-radius: 10px;
+    border-bottom: 70px;
 
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 
-    margin: 20px;
+    margin: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
 

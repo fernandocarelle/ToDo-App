@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div `
     width: 100%;
+    overflow: auto;
 `;
 
 export const FilterArea = styled.div `
@@ -26,6 +27,7 @@ export const Content = styled.div `
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    overflow: visible;
 `;
 
 export const Title = styled.div `
@@ -33,7 +35,7 @@ export const Title = styled.div `
     border-bottom: 1px solid #2A9D8F;
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 
     h3 {
         color: #2A9D8F;

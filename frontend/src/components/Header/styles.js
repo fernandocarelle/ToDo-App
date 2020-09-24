@@ -23,6 +23,16 @@ export const LeftSide = styled.div `
         height: 40px;
     }
 
+    @media (max-width: 399px) {
+        
+        img {
+            width: 70px;
+            height: 30px;
+
+        };
+    }
+    }
+
 `;
 export const RightSide = styled.div `
 
@@ -69,5 +79,53 @@ export const RightSide = styled.div `
         content: "|";
         margin: 0 10px;
         color: #fff;
+    }
+
+    @media (min-width: 580px;) and ( max-width: 680px) {
+        a {
+            font-size: 12px;
+        }
+        #notification {
+        img {
+            width: 20px;
+            height: 25px;
+
+        };
+    }
+    }
+
+    @media (max-width: 538px) and (max-width: 579px) {
+        margin-right: 2px;
+        a {
+            font-size: 8px;
+        }
+        #notification {
+        img {
+            width: 15px;
+            height: 20px;
+
+        };
+    }
+    }
+    @media (max-width: 538px) {
+
+        margin-right: 2px;
+
+        a {
+            font-size: 8px;
+        }
+        #notification {
+        img {
+            width: 15px;
+            height: 20px;
+
+        };
+        
+    }
+    .dividir::after {
+        content: "";
+        margin: 0 3px;
+        color: #fff;
+    }
     }
 `;

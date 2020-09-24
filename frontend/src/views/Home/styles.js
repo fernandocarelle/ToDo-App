@@ -18,6 +18,7 @@ export const FilterArea = styled.div `
         outline: none;
         background: transparent;
     }
+    
 `;
 
 export const Content = styled.div `

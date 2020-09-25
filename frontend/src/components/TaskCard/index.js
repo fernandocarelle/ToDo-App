@@ -4,12 +4,12 @@ import { format } from 'date-fns';
 
 import typeIcons from '../../utils/typeicon';
 
-function TaskCard({ type, title, when }) {
+function TaskCard({ type, title, when, done }) {
   const date = useMemo(() => format(new Date(when), 'dd/MM/yyyy'));
   const hour = useMemo(() => format(new Date(when), 'HH:mm'));
 
   return (
-    <S.Container>
+    <S.Container done={done}>
         <S.TopCard>
           <img src={typeIcons[type]} alt="Icone de tarefa" />
           <h3>{title}</h3>

@@ -6,6 +6,7 @@ export const Container = styled.div `
     flex-direction: column;
     align-items: center;
     
+    
 `;
 
 export const Content = styled.div `
@@ -30,6 +31,7 @@ export const QrCodeArea = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
+    margin: 15px 0px
 `;
 
 export const ValidationCode = styled.div`
@@ -40,6 +42,7 @@ export const ValidationCode = styled.div`
     span {
         text-transform: uppercase;
         font-weight: bold;
+        
     }
 
     input {

@@ -89,6 +89,10 @@ export const RightSide = styled.div `
         color: #fff;
     }
 
+    button {
+        font-size: 16px;
+    }
+
     @media (min-width: 580px;) and ( max-width: 680px) {
         a {
             font-size: 12px;

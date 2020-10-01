@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import * as S from './styles';
+import {Redirect} from 'react-router-dom';
 
 import Qr from 'qrcode.react';
 
@@ -9,13 +10,22 @@ import Footer from '../../components/Footer/index';
 
 function QrCode() {
   const [mac, setMac] = useState();
+  const [redirect, setRedirect] = useState(false);
   
   async function SaveMac(){
-      await localStorage.setItem('@todo/macaddress', mac)
+      if(!mac)
+      alert('Você precisa informar o número que apareceu no celular');
+      else{
+        await localStorage.setItem('@todo/macaddress', mac);
+        setRedirect(true);
+        window.location.reload();
+      }
+      
   }
 
   return (
     <S.Container>
+        {redirect && <Redirect to="/" />}
         <Header  />
         <S.Content>
             <h1>CAPTURE O QRCODE PELO APP</h1>

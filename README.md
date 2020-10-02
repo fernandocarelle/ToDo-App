@@ -12,7 +12,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 $ git clone <https://github.com/fernandocarelle/ToDo-App.git>
 
 ## Importe as rotas da API no Insomnia
- [Insomnia] (https://github.com/fernandocarelle/ToDo-App/blob/master/Insomnia_2020-09-11.json)
+ https://github.com/fernandocarelle/ToDo-App/blob/master/Insomnia_2020-09-11.json
 
 ## BackEnd
 
